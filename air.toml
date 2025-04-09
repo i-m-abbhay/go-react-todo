@@ -1,0 +1,10 @@
+root = "."      #root directory of project
+tmp_dir = "tmp" #temp directory in which air will store temp files
+
+[build] #build config
+bin = "main"                               #name of bin file to be generated after
+cmd = "go build -o {{.Output}} {{.Input}}" #command to build project
+exculde = ["tmp/*", "client/*"]            #directories to watch
+include = ["**/*.go"]                      #file patterns to be included for watching
+ignore = ["tmp/*"]
+#Specifies the file or directories to be ignored when triggering a build
